@@ -11,12 +11,12 @@ from functools import wraps
 
 
 def runtime(func):
-    """runtime decorators"""
+    
     @wraps(func)
     def wrapper(*args, **kwargs):
 
         start = time()
-        f = func(*args, **kwargs)     # 原函数
+        f = func(*args, **kwargs)
         end = time()
         print("{}: {}s".format(func.__name__, end-start))
         return f
